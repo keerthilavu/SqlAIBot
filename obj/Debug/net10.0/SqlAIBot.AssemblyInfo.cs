@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SqlAIBot")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4fa3c88ceab17983aed42914f3c0d6c347d113b6")]
 [assembly: System.Reflection.AssemblyProductAttribute("SqlAIBot")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SqlAIBot")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
