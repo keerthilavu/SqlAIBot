@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <h1 style="font-size:32px;">AI Text-to-SQL Assistant</h1>
+<p style="color:gray;">Ask questions in plain English and Get SQL instantly</p>
+    <style>
+        body {
+            font-family: Arial;
+            background: #0f172a;
+            color: white;
+            text-align: center;
+            padding: 50px;
+        }
+        input {
+            width: 60%;
+            padding: 12px;
+            border-radius: 8px;
+            border: none;
+            font-size: 16px;
+        }
+        button {
+            padding: 12px 20px;
+            background: #22c55e;
+            border: none;
+            border-radius: 8px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .result {
+            margin-top: 30px;
+            padding: 20px;
+            background: #1e293b;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <input id="question" placeholder="Ask something like: total sales for Apple" />
+    <br><br>
+    <button onclick="ask()">Ask</button>
+
+    <div class="result" id="output"></div>
+
+    <script>
+        async function ask() {
+            const q = document.getElementById("question").value;
+
+            const res = await fetch(`/ask?question=${encodeURIComponent(q)}`);
+            const data = await res.json();
+
+            document.getElementById("output").innerHTML =
+    `
+    <div style="text-align:left">
+        <h3>Generated SQL</h3>
+        <pre>${data.sql}</pre>
+
+        <h3>Result</h3>
+        <p style="font-size:20px;color:#22c55e;">
+            ${data.result}
+        </p>
+    </div>
+    `;
+        }
+    </script>
+
+</body>
+</html>

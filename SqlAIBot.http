@@ -1,0 +1,6 @@
+@SqlAIBot_HostAddress = http://localhost:5173
+
+GET {{SqlAIBot_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
